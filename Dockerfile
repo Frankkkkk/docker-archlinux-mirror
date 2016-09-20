@@ -8,7 +8,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
 COPY nginx.conf /etc/nginx/sites-available/default
 COPY mirror_archlinux.sh /
 COPY run.sh /
-COPY cron /
 
 VOLUME /archlinux_mirror
 EXPOSE 80 443
