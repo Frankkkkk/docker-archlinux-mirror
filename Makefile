@@ -2,7 +2,7 @@ run: build
 	docker run -d \
 	--restart=always \
 	-p 127.0.0.1:5017:80 \
-	-v /dev/shm/archlinux:/mirror_archlinux \
+	-v /media/servsto/archlinux:/archlinux_mirror \
 	archlinux_mirror
 
 build:
