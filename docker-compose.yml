@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mirror-update:
+    build: update
+    volumes:
+      - mirror-data:/mnt/mirror
+
+  mirror-http:
+    build: http
+    volumes:
+      - mirror-data:/mnt/mirror
+
+volumes:
+  mirror-data:

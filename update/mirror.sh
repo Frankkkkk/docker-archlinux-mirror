@@ -1,6 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
-cd /archlinux_mirror
 
 RSYNC=/usr/bin/rsync
 
@@ -12,7 +11,13 @@ MIRROR=rsync://mirror.de.leaseweb.net/archlinux/
 
 OPTIONS=-"rtlvH --delete-after --delay-updates --safe-links --max-delete=3000"
 
-$RSYNC $OPTIONS $MIRROR ./ > /dev/null
 
-date > __last_sync
+pushd /mnt/mirror
+
+while true; do
+	$RSYNC $OPTIONS $MIRROR ./ > /dev/null
+	date > __last_sync
+	sleep 2h
+done
+
 
