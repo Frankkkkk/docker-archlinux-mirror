@@ -2,11 +2,13 @@ version: '3'
 services:
   mirror-update:
     build: update
+    restart: always
     volumes:
       - mirror-data:/mnt/mirror
 
   mirror-http:
     build: http
+    restart: always
     volumes:
       - mirror-data:/mnt/mirror
 
